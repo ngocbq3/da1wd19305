@@ -5,7 +5,7 @@ class Product extends BaseModel
     //lấy toàn bộ sản phẩm
     public function all()
     {
-        $sql = "SELECT * FROM products";
+        $sql = "SELECT p.*, c.cate_name FROM products p JOIN categories c ON p.category_id=c.id";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
