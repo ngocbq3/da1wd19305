@@ -3,7 +3,11 @@ class HomeController
 {
     public function index()
     {
-        $categories = ['name' => 'Bóng đá', 'description' => 'Trang bóng đá'];
-        return view("client.home", ['categories' => $categories]);
+        //Lấy danh sách pets
+        $product = new Product;
+        $pets = $product->listPets();
+        $list_products = $product->listOtherProduct();
+
+        return view('client.home', compact('pets', 'list_products'));
     }
 }

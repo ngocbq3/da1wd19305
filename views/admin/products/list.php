@@ -1,6 +1,11 @@
 <?php include_once ROOT_DIR . "views/admin/header.php" ?>
 
 <div>
+    <?php if ($message != '') : ?>
+        <div class="mt-3 mb-3 alert alert-success">
+            <?= $message ?>
+        </div>
+    <?php endif ?>
     <table class="table">
         <thead>
             <tr>
@@ -29,7 +34,8 @@
                     <td><?= $pro['status'] ? 'Đang kinh doanh' : 'Ngừng kinh doanh' ?></td>
                     <td><?= $pro['cate_name'] ?></td>
                     <td>
-                        <a href="<?= ADMIN_URL . '?ctl=editsp&id=' . $pro['id'] ?>" class="btn btn-primary">Cập nhật</a>
+                        <a href="<?= ADMIN_URL . '?ctl=editsp&id=' . $pro['id'] ?>" class="btn btn-primary">Edit</a>
+                        <a href="<?= ADMIN_URL . '?ctl=deletesp&id=' . $pro['id'] ?>" class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không?')">Xóa</a>
                     </td>
                 </tr>
             <?php endforeach ?>
