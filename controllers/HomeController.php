@@ -8,6 +8,12 @@ class HomeController
         $pets = $product->listPets();
         $list_products = $product->listOtherProduct();
 
-        return view('client.home', compact('pets', 'list_products'));
+        //Danh mục
+        $categories = (new Category)->all();
+
+        return view(
+            'client.home',
+            compact('pets', 'list_products', 'categories')
+        );
     }
 }
