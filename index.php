@@ -7,6 +7,7 @@ require_once __DIR__ . "/models/Product.php";
 
 require_once __DIR__ . "/controllers/HomeController.php";
 require_once __DIR__ . "/controllers/ProductController.php";
+require_once __DIR__ . "/controllers/SearchController.php";
 
 $ctl = $_GET['ctl'] ?? '';
 
@@ -42,7 +43,8 @@ $ctl = $_GET['ctl'] ?? '';
 // var_dump($product->find(1)); //lấy 1 sản phẩm
 
 match ($ctl) {
-    '', 'home' => (new HomeController)->index(),
-    'category' => (new ProductController)->list(),
+    '', 'home'  => (new HomeController)->index(),
+    'category'  => (new ProductController)->list(),
+    'search'    => (new SearchController)->search(),
     default => view("errors.404"),
 };

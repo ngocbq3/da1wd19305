@@ -30,7 +30,7 @@
 
                     </ul>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="keyword">
                         <button class="btn btn-outline-success" type="button" id="search">Search</button>
                     </form>
                 </div>
