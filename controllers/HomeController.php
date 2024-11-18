@@ -10,10 +10,10 @@ class HomeController
 
         //Danh mục
         $categories = (new Category)->all();
-
+        $title = 'Trang chủ website';
         return view(
             'client.home',
-            compact('pets', 'list_products', 'categories')
+            compact('pets', 'list_products', 'categories', 'title')
         );
     }
 }

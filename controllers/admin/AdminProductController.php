@@ -9,7 +9,8 @@ class AdminProductController
         $message = $_SESSION['message'] ?? '';
         unset($_SESSION['message']);
         $products = (new Product)->all();
-        return view("admin.products.list", compact('products', 'message'));
+        $title = 'Trang chủ website';
+        return view("admin.products.list", compact('products', 'message', 'title'));
     }
 
     //Hàm create hiển thị form thêm mới

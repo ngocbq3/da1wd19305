@@ -22,13 +22,16 @@
                             <a class="nav-link active" aria-current="page" href="<?= ADMIN_URL ?>">Dashboard</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listdm' ?>">Danh mục</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listsp' ?>">Sản phẩm</a>
                         </li>
 
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-outline-success" type="button" id="search">Search</button>
                     </form>
                 </div>
             </div>
