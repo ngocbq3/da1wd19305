@@ -3,6 +3,7 @@ class HomeController
 {
     public function index()
     {
+
         //Lấy danh sách pets
         $product = new Product;
         $pets = $product->listPets();
